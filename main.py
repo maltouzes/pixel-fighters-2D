@@ -207,14 +207,19 @@ class FightGame(App):
     def monster_move(self, monster_healt_to, img_to_monster, path_to_monster,
                      rapidity):
         """ Move if monster is not dead """
-        if monster_healt_to > 0:
-            if self.jump_monster == "no":
-                self.monster_move_ok(monster_healt_to, img_to_monster,
-                                     path_to_monster, rapidity)
+        if self.player_healt > 0:
+            if monster_healt_to > 0:
+                if self.jump_monster == "no":
+                    self.monster_move_ok(monster_healt_to, img_to_monster,
+                                         path_to_monster, rapidity)
+                else:
+                    pass
             else:
-                pass
+                self.monster_dead(img_to_monster, path_to_monster)
         else:
-            self.monster_dead(img_to_monster, path_to_monster)
+            if monster_healt_to > 0:
+                img_to_monster.source = (self.path + path_to_monster +
+                                         "/5x/idle_right.gif")
 
     def monster_move_ok(self, monster_healt_to, img_of_monster,
                         path_of_monster, rapidity):
@@ -458,7 +463,7 @@ class FightGame(App):
         # Check if a monster is fighting
         # if "attack" in img_of_monster1.source or\
         # "attack" in img_of_monster2.source:
-        if "yes" in self.jump_monster:
+        if "yes" in self.jump_monster or self.player_healt <= 0:
             pass
 
         elif "right" in img_of_monster1.source and\
