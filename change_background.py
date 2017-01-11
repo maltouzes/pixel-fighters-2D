@@ -1,4 +1,4 @@
-""" This file is a part of fightgame made by Maltouzes """
+""" This file is a part of pixel-fighters-2D made by Maltouzes """
 
 
 def change_background(self, keycode):

@@ -1,4 +1,4 @@
-""" This file is a part of fightgame made by Maltouzes """
+""" This file is a part of pixel-fighters-2D made by Maltouzes """
 
 
 def load_character(self, character, character_source):
