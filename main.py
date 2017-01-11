@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-""" An old scool fight game """
+""" An old school fight game """
 import kivy
 kivy.require('1.9.0')
 
